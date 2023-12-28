@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification Results</title>
+    <style>
+        img {
+            width: 200px; 
+            height: 200px; 
+            margin-right: 10px;
+        }
+
+        .prediction {
+            font-weight: bold;
+            font-size: 16px;  
+        }
+
+        .filename {
+            font-size: 12px;  
+            color: #888;  
+        }
+
+        .result-container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .text-container {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body style="text-align: center; font-size: 18px;">
+
+    <h1>Image Classification Results for Folder: {{ foldername }}</h1>
+
+<a href="{{ url_for('index') }}" style="font-size: 18px;">Go back to Home</a>
+<br>
+<br>
+
+<br>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 80%;  
+        margin: 20px auto;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;  
+    }
+</style>
+
+<table style="margin: 0 auto;">
+    <tr>
+        <th>Image</th>
+        <th>Article</th>
+        <th>T-shirt/top</th>
+        <th>Trouser</th>
+        <th>Pullover</th>
+        <th>Dress</th>
+        <th>Coat</th>
+        <th>Sandal</th>
+        <th>Shirt</th>
+        <th>Sneaker</th>
+        <th>Bag</th>
+        <th>Ankle boot</th>
+        <th>Class</th>
+    </tr>
+
+    {% for result in results %}
+        <tr>
+            <td>
+                {% set image_path = 'uploads/' + result['filename'] %}
+                {% if url_for('static', filename=image_path) %}
+                    <img src="{{ url_for('serve_static', filename=result['filename']) }}" alt="Image" style="width: 200px; height: 200px;">
+                {% else %}
+                    <p>Image not found: {{ result['filename'] }}</p>
+                {% endif %}
+            </td>
+            <td style="font-size: 14px;">{{ result['filename'] }}</td>
+            
+            {% for prediction in result['resultperc'] %}
+                <td style="font-size: 14px;">{{ prediction }}</td>
+            {% endfor %}
+
+            <td style="font-size: 14px; "><b>{{ result['product'] }}</td></b>
+
+        </tr>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>
+

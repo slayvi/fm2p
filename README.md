@@ -1,7 +1,7 @@
 # From Model to Production
 Deploying a Image Classification Model with Docker, Flask and Terraform as Infrastructure as a Code (IaC) on Amazon Web Services (AWS) for the **From Model to Production** course of my studies at the International University.
 
-# On-Premise / Cloud
+# Local / Cloud
 The application for local computing:
 ```
 /local
@@ -13,8 +13,23 @@ The application for the cloud, incl. Terraform code to create infrastructure on 
 ```
 
 
-## Prerequieries
-Before you can use the magic of IaC, your computer must meet the following requirements:
+
+## Run Locally
+You can run the application locally, making sure the following prerequieries:
+
+1. **Docker Engine** <br /> 
+You will need Docker Desktop to run on your PC. For download and documentation, please check the [official website](https://www.docker.com/). Make sure Docker is running when apply the IaC to AWS. <br />
+You may also need to register on [Docker Hub](https://hub.docker.com/).
+
+You can get the code by either downloading the .zip-File or clone it via the command promt. For more information about the later please check the [github docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
+
+
+
+
+
+## Deploy on Cloud
+Before you can deploy the infrastructure on the cloud with terraform, your computer must meet the following requirements:
 
 1. **Linux Distribution // Windows Subsystem for Linux (WSL)** <br /> 
 First, make sure you have a Linux Distribution to run the IaC template. If you're working with Windows, check the [Documentation on WSL](https://learn.microsoft.com/en-us/windows/wsl/) to set up a WSL.
@@ -35,7 +50,7 @@ After following the above mentioned steps, you're good to go and run the terrafo
 You can get the code by either downloading the .zip-File or clone it via the command promt. For more information about the later please check the [github docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 
-## Getting Started
+## Getting Started to deploy in the cloud
 
 First, you will have to enter your **AWS credentials** in the files
 ```

@@ -1,6 +1,17 @@
 # From Model to Production
 Deploying a Image Classification Model with Docker, Flask and Terraform as Infrastructure as a Code (IaC) on Amazon Web Services (AWS) for the **From Model to Production** course of my studies at the International University.
 
+# On-Premise / Cloud
+The application for local computing:
+```
+/local
+```
+
+The application for the cloud, incl. Terraform code to create infrastructure on AWS:
+```
+/cloud
+```
+
 
 ## Prerequieries
 Before you can use the magic of IaC, your computer must meet the following requirements:

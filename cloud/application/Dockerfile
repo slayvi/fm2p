@@ -51,7 +51,7 @@ RUN mkdir -m 777 /app/archive
 EXPOSE 5000
 
 # Run application every day:
-RUN echo "* * * * * /app/cron-script.sh >> /var/log/cron.log 2>&1" | crontab -
+RUN echo "0 0 * * * /app/cron-script.sh >> /var/log/cron.log 2>&1" | crontab -
 # : * every day of month, * every month, * every day of week
 
 # Start application

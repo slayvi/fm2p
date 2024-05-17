@@ -88,7 +88,7 @@ terraform destroy -var-file="variables.tfvars"
 
 ## The Machine Learning Application
 
-The ML-app is merely an example flask application, with use of the Fashion MNIST Dataset.
+The ML-aplication is done with tensorflow, with use of the Fashion MNIST Dataset.
 
 
 ## Graphical Representation of the Infrastructure 

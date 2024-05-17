@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# export AWS_ACCESS_KEY_ID=$(awk -F= '/^AWS_ACCESS_KEY=/{gsub(/[ \t]+$/, "", $2); print $2}' /app/.env)
-# export AWS_SECRET_ACCESS_KEY=$(awk -F= '/^AWS_SECRET_KEY=/{gsub(/[ \t]+$/, "", $2); print $2}' /app/.env)
-
-export AWS_ACCESS_KEY_ID=insertyourawsaccesskeyhere
-export AWS_SECRET_ACCESS_KEY=insertyourawssecretkeyhere
+export AWS_ACCESS_KEY_ID="insertyourawsaccesskeyhere"
+export AWS_SECRET_ACCESS_KEY="insertyourawssecretkeyhere"
 
 export AWS_DEFAULT_REGION=eu-west-1
 S3_BUCKET="bucketfm2p"

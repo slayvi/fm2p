@@ -21,10 +21,6 @@ You can run the application locally, making sure the following prerequieries:
 You will need Docker Desktop to run on your PC. For download and documentation, please check the [official website](https://www.docker.com/). Make sure Docker is running when apply the IaC to AWS. <br />
 You may also need to register on [Docker Hub](https://hub.docker.com/).
 
-You can get the code by either downloading the .zip-File or clone it via the command promt. For more information about the later please check the [github docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
-
-
-
 
 
 

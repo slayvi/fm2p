@@ -17,7 +17,11 @@ The application for the cloud, incl. Terraform code to create infrastructure on 
 ## Run Locally
 You can run the application locally, making sure the following prerequieries:
 
-1. **Docker Engine** <br /> 
+
+1. **Linux Distribution // Windows Subsystem for Linux (WSL)** <br /> 
+First, make sure you have a Linux Distribution to run the IaC template. If you're working with Windows, check the [Documentation on WSL](https://learn.microsoft.com/en-us/windows/wsl/) to set up a WSL.
+
+2. **Docker Engine** <br /> 
 You will need Docker Desktop to run on your PC. For download and documentation, please check the [official website](https://www.docker.com/). Make sure Docker is running when apply the IaC to AWS. <br />
 You may also need to register on [Docker Hub](https://hub.docker.com/).
 

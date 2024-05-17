@@ -30,9 +30,9 @@ ecs_service = "ml-service"
 
 container_name = "ml-container"
 
-cpu = 512
+cpu = 256
 
-memory = 3072 
+memory = 2048 
 
 alb_name = "lb"
 

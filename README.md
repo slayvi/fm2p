@@ -21,8 +21,14 @@ You can run the application locally, making sure the following prerequieries:
 You will need Docker Desktop to run on your PC. For download and documentation, please check the [official website](https://www.docker.com/). Make sure Docker is running when apply the IaC to AWS. <br />
 You may also need to register on [Docker Hub](https://hub.docker.com/).
 
-
-
+2 **Build Image** <br />
+```
+docker build -t yourtag .
+```
+3 **Run Container** <br />
+```
+ docker run -d -p 5000:5000 yourtag
+```
 
 ## Deploy on Cloud
 Before you can deploy the infrastructure on the cloud with terraform, your computer must meet the following requirements:

@@ -49,9 +49,9 @@ RUN mkdir -m 777 /app/downloads /app/uploads /app/logs /app/archive
 EXPOSE 5000
 
 # Run application every day
-#RUN echo "0 0 * * * /app/cron-script.sh >> /var/log/cron.log 2>&1" | crontab -
+RUN echo "0 0 * * * /app/cron-script.sh >> /var/log/cron.log 2>&1" | crontab -
 #test:
-RUN echo "*/5 * * * * /app/cron-script.sh >> /var/log/cron.log 2>&1" | crontab -
+#RUN echo "*/5 * * * * /app/cron-script.sh >> /var/log/cron.log 2>&1" | crontab -
 
 # Start application
 CMD ["sh", "-c", "cron && python main.py"]

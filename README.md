@@ -72,6 +72,8 @@ Before you can upload your infrastructure to AWS, you'll need to login in the co
 aws configure
 ```
 Insert your AWS Access Key ID and AWS Secret Access Key. 
+As I hard coded the region in some files, you may go with eu-west-1 as default region (it's the cheapest solution in europe for the fargate service right now) <br />
+
 Make sure Docker Desktop is running.
 
 Then run the following commands in the *infrastructure* directory:

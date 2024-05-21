@@ -56,8 +56,13 @@ You can get the code by either downloading the .zip-File or clone it via the com
 
 First, you will have to enter your **AWS credentials** in the files
 ```
-/application/cron-script.sh 
-/application/.env
+**/application/cron-script.sh**
+export AWS_ACCESS_KEY_ID="youraccesskey"
+export AWS_SECRET_ACCESS_KEY="yoursecretkey"
+
+**/application/.env**
+AWS_ACCESS_KEY=youraccesskey
+AWS_SECRET_KEY=yoursecretkey
 ```
 (had issues with importing the credentials in the shell script, if you have any solutions for this, I'm happy to hear)
 

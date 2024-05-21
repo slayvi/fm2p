@@ -52,7 +52,7 @@ After following the above mentioned steps, you're good to go and run the terrafo
 You can get the code by either downloading the .zip-File or clone it via the command promt. For more information about the later please check the [github docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 
-## Getting Started to deploy in the cloud
+### Deployment
 
 First, you will have to enter your **AWS credentials** in the files
 ```

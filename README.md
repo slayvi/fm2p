@@ -54,7 +54,7 @@ You can get the code by either downloading the .zip-File or clone it via the com
 
 ### Deployment
 
-First, you will have to enter your **AWS credentials** in the following files in the *application* directory: <br />
+First, you will have to enter your **AWS credentials** in the following files in the *application* directory: <br /> <br />
 **/application/cron-script.sh**
 ```
 export AWS_ACCESS_KEY_ID="youraccesskey"

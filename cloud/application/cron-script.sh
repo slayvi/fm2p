@@ -2,8 +2,8 @@
 
 export AWS_ACCESS_KEY_ID="insertyourawsaccesskeyhere"
 export AWS_SECRET_ACCESS_KEY="insertyourawssecretkeyhere"
-
 export AWS_DEFAULT_REGION=eu-west-1
+
 S3_BUCKET="bucketfm2p"
 S3_BUCKET2="bucketlogsfm2p"
 

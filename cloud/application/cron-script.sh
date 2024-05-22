@@ -8,35 +8,28 @@ S3_BUCKET="bucketfm2p"
 S3_BUCKET2="bucketlogsfm2p"
 
 DESTINATION_FOLDER="/app/downloads/"
-ARCHIVE_FOLDER="/app/archive/$(date '+%Y-%m-%d'-%h)/"
 UPLOAD_FOLDER="/app/uploads/"
-LOG_FILE="/app/logs/$(date '+%Y-%m-%d').log"
-DAILY_RES="/app/logs/results-$(date '+%Y-%m-%d').log"
+LOG_FILE="/app/logs/$(date '+%Y-%m-%d').log"            # application log (general)
+DAILY_RES="/app/logs/results-$(date '+%Y-%m-%d').log"   # classified results log
 
-# Create the destination folder if it doesn't exist
-mkdir -p $DESTINATION_FOLDER
-mkdir -p $ARCHIVE_FOLDER
-
-# Archive todays images (locally)
-mv $DESTINATION_FOLDER* $ARCHIVE_FOLDER
-
-# Archive and Log (cloud):
-aws s3 cp "${ARCHIVE_FOLDER}/" "s3://${S3_BUCKET2}/$(date '+%Y-%m-%d'-%h)/" --recursive
-aws s3 cp $LOG_FILE s3://$S3_BUCKET2/$(date '+%Y-%m-%d'-%h)/
-echo "Daily archive successful."
-
-# Delete todays images (locally)
-rm $DESTINATION_FOLDER* 
-rm $UPLOAD_FOLDER*        
+# Delete images at 00:00 (locally)
+rm $DESTINATION_FOLDER*
+rm $UPLOAD_FOLDER*
 
 # Download files from S3 to local:
 aws s3 sync s3://$S3_BUCKET $DESTINATION_FOLDER
 
-# Classify daily pictures (for logs):
+# Classify pictures and log the results:
 /usr/local/bin/python3 /app/classify_daily.py
-aws s3 cp $DAILY_RES s3://$S3_BUCKET2/$(date '+%Y-%m-%d'-%h)/
+aws s3 cp $DAILY_RES s3://$S3_BUCKET2/$(date '+%Y-%m-%d')/
 
-# Delete images (cloud)
+# Archive and Log (cloud):
+aws s3 cp $DESTINATION_FOLDER s3://$S3_BUCKET2/$(date '+%Y-%m-%d')/ --recursive
+
+aws s3 cp $LOG_FILE s3://$S3_BUCKET2/$(date '+%Y-%m-%d')/
+
+# Empty bucket (cloud)
 aws s3 rm s3://$S3_BUCKET --recursive
 
-echo "Images synced from S3 bucket $S3_BUCKET to $DESTINATION_FOLDER at $(date)"
+echo "Images synced from S3 bucket $S3_BUCKET to S3 bucket $S3_BUCKET2 at $(date)"
+

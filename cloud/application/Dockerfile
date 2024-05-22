@@ -43,7 +43,7 @@ COPY cron-script.sh /app/cron-script.sh
 RUN chmod +x /app/cron-script.sh /app/classify_daily.py
 
 # Create directories
-RUN mkdir -m 777 /app/downloads /app/uploads /app/logs /app/archive
+RUN mkdir -m 777 /app/downloads /app/uploads /app/logs 
 
 # Expose port (Flask)
 EXPOSE 5000
